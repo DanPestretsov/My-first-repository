@@ -1,10 +1,15 @@
-n = int(input())
+n=int(input())
 
-lines = [['.' for i in range(n)] for i in range(n)]
+lines = [ ['.' for i in range(n)] for i in range(n) ]
 for i in range(n):
-    lines[i][i] = '*'
-    # как узнать индекс центральной линии используя число n?
-    lines[n // 2][i] = '*'
-    lines[i][n - i - 1] = '*'
+  # левая диагональ
+  lines[i][i] = '*'
+  # центральный столбец
+  lines[i][n//2]='*'
+  # правая диагональ
+  lines[i][n - i - 1] = '*'
+  # центральный ряд
+  lines[n//2][i]='*'
 
-    print(*lines[i])
+for i in range(n):
+  print(*lines[i])
